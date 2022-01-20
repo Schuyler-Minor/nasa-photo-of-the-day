@@ -1,23 +1,16 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
+import React from "react";
 
-const Content = () => {
-    const [ nasaData, setNasaData] = useState([])
 
-    useEffect(() => {
-        axios.get(`https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY`)
-          .then(res => {
-            console.log(res.data);
-            setNasaData(res.data)
-          }).catch(err => console.error(err))
-      }, [])
-
+const Content = (props) => {
     return (
         <div>
-            <p>THERE WILL BE TONS OF CONTENT HERE <br/>
-                LIKE VERY SOON<br/>
-                SUPER SOON
-            </p>
+            <h1>Nasa Picture of the Day!</h1>
+            <p>{props.data.date}</p>
+            <p>{props.data.title}</p>
+            <img src={props.data.url} alt="Nasa Picture of the day" />
+            <p>{props.data.explanation}</p>
+
+
         </div>
     )
 }

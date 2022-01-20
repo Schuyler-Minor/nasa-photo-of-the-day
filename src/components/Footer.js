@@ -1,8 +1,11 @@
 import React from "react";
 
-const Footer = props => {
+
+const Footer = (props) => {
     return (
-        <p>footer</p>
+        <div>
+            <h1>{props.data.copyright}</h1>
+        </div>
     )
 }
 
