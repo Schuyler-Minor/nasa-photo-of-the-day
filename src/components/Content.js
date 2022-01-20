@@ -5,7 +5,7 @@ import styled from "styled-components";
 const StyledContent = styled.div`
     
     background-color: #EEEEFF ;
-    padding: 100px ;
+    padding: 20px;
     border-bottom: 2px solid white;
     background-color: ${pr => pr.theme.secondaryColor};
     color: ${pr => pr.theme.white};
