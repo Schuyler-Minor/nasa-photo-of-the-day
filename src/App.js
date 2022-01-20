@@ -13,6 +13,7 @@ function App() {
       axios.get(`https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY`)
         .then(res => {
           setNasaData(res.data);
+          console.log(res.data)
         }).catch(err => console.error(err))
     }, [])
  
@@ -21,9 +22,6 @@ function App() {
     <div className="App">
       <Header />
       { nasaData && <Content data={nasaData} /> }
-
-     
-      
      { nasaData && <Footer data={nasaData} />}
     
     </div>
