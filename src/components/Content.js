@@ -15,6 +15,26 @@ const StyledContent = styled.div`
     }
  
 `
+const Flex = styled.div`
+    display: flex;
+    align-items: center;
+
+    & > div,
+    & > ul {
+        flex: 1;
+    }
+`
+const Image = styled.img`
+    width: 500px;
+    margin-left: 40px;
+    border-radius: 0px;
+
+    @media (max-width: ${({ theme }) => theme.mobile}) {
+        margin: 40px 0 30px;
+        width: 375px;
+    }
+    
+`
 
 const Content = (props) => {
     return (
@@ -22,10 +42,8 @@ const Content = (props) => {
             <h1>Nasa Picture of the Day!</h1>
             <p>{props.data.date}</p>
             <p>{props.data.title}</p>
-            <img src={props.data.url} alt="Nasa Picture of the day" />
+            <Image src={props.data.url} alt="Nasa Picture of the day" />
             <p>{props.data.explanation}</p>
-
-
         </StyledContent>
     )
 }

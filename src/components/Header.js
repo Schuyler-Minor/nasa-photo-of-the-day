@@ -12,9 +12,21 @@ const Nav = styled.nav`
     align-items: center;
     justify-content: space-between;
     margin-bottom: 40px;
+
+    @media (max-width: ${({ theme }) => theme.mobile}) {
+        flex-direction: column;
+    }
 `
 const Logo = styled.img`
+    display: flex;
+    justify-content: space-between;
+    width: 375px;
+    margin-left: 40px;
+    border-radius: 50px;
 
+    @media (max-width: ${({ theme }) => theme.mobile}) {
+        margin-bottom: 40px;
+    
 `
 const Button = styled.button`
     border-radius: 50 px;
